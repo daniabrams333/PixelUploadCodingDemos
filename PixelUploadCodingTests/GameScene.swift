@@ -7,8 +7,6 @@
 
 import SpriteKit
 
-
-
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
@@ -25,8 +23,24 @@ class GameScene: SKScene {
         
         background.zRotation = CGFloat.pi / -2
         
+        
+        background.zPosition = -1
+       // background.size = CGSize(width:1200, height:900)
+        
+        background.setScale(2.2)
+        
         addChild(background)
         
         
+        let bgSize = background.size
+        print("Size: \(bgSize)")
+        
+        let carRear = SKSpriteNode(imageNamed: "headOn")
+        let turnRight = SKSpriteNode(imageNamed: "turnRight")
+        let turnLeft = SKSpriteNode(imageNamed: "turnLeft")
+        
+        carRear.position = CGPoint(x: size.width/2 , y: size.height/2 )
+        carRear.zRotation = CGFloat.pi / -2
+        addChild(carRear)
     }
 }
